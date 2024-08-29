@@ -1,7 +1,5 @@
-
 /***** Fuente *****/ 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
 
 /***** Texto *****/ 
 h1, h2, h3, h4, h5, h6 {
@@ -15,61 +13,49 @@ p {
     line-height: 1.6;
 }
 
-
 a {
     text-decoration: none;
 }
 
-
-
-
-body{
+body {
     background-color: #4d56d2 !important;
     color: #ffff !important;
     font-family: 'Ubuntu', sans-serif !important;
 }
 
 /*****  Header seccion *****/  
-
-
 .header {
     background: linear-gradient(135deg, #4d56d2, #3a3fa7);
     padding: 1rem 0;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-
-.header .navbar .logo h2{
-
+.header .navbar .logo h2 {
     font-size: 2.5em !important;
 }
 
-.header .navbar .logo h2 span{
+.header .navbar .logo h2 span {
     color: aqua;
     text-shadow: 1px 1px white;
 }
 
-.header .navbar .menu-navbar{
+.header .navbar .menu-navbar {
     width: 40vw;
     display: flex;
     justify-content: space-around;
     list-style: none;
 }
 
-
-.header .navbar .menu-navbar a{
-
+.header .navbar .menu-navbar a {
     text-decoration: none;
     color: white;
 }
-
 
 .header .navbar .menu-navbar a:hover {
     color: aqua;
     text-shadow: 0px 0px 5px white;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
-
 
 /***** Main section *****/
 .main-content {
@@ -78,6 +64,7 @@ body{
     justify-content: center;
     padding: 60px 0;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .main-content .bio {
@@ -94,9 +81,9 @@ body{
 
 .main-content .img-container {
     width: 30%;
+    display: flex;
+    justify-content: center;
 }
-
-
 
 @keyframes fadeInUp {
     from {
@@ -109,9 +96,9 @@ body{
     }
 }
 
-
 .main-content .img-container img {
-    width: 20vw;
+    width: 100%;
+    max-width: 400px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -122,8 +109,6 @@ body{
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-
-
 button {
     background-color: #4d56d2;
     color: white;
@@ -131,40 +116,96 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; 
 }
 
 button:hover {
-    background-color: #3a3fa7;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
+/***** Cards *****/
+.card-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
 
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
+.card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; 
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
 
 /***** Form *****/ 
-
-
 .contact-form {
     display: flex;
-    justify-content: center; 
-    padding: 20px; 
+    justify-content: center;
+    padding: 20px;
 }
 
 .form-group {
-    width: 100%; 
+    width: 100%;
+    max-width: 1200px; 
+    padding: 20px;
 }
-
 
 .form-floating {
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 
+/* Estilos Responsivos */
+
+@media (max-width: 768px) {
+    .header .navbar .menu-navbar {
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+    }
+
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-content .bio, 
+    .main-content .img-container {
+        width: 100%;
+    }
+
+    .main-content .img-container img {
+        width: 60vw;
+        max-width: 100%;
+    }
+
+    .form-group {
+        padding: 10px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header .navbar .logo h2 {
+        font-size: 2em;
+    }
+
+    .main-content .img-container img {
+        width: 80vw;
+    }
+}
 
 /***** Footer *****/ 
-
-
 .footer {
     background-color: #3a3fa7;
     padding: 1rem 0;
@@ -198,35 +239,3 @@ button:hover {
 .social-networks a:active {
     color: #012b55; 
 }
-
-/***** media query *****/
-
-@media (max-width: 768px) {
-    .header .navbar .menu-navbar {
-        width: 100%;
-        justify-content: space-evenly;
-        padding: 1rem 0;
-    }
-
-    .main-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .main-content .img-container img {
-        width: 40vw;
-    }
-}
-
-@media (max-width: 480px) {
-    .header .navbar .logo h2 {
-        font-size: 2em;
-    }
-
-    .main-content .img-container img {
-        width: 60vw;
-    }
-}
-
-
-
